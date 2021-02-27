@@ -97,6 +97,14 @@ exec $SHELL -l
 # pyenv
 pyenv install 3.7.9
 pyenv global 3.7.9
+
+# install petry
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+exec $SHELL -l
+poetry config virtualenvs.in-project true
+mkdir -p ~/.zfunc
+poetry completions zsh > ~/.zfunc/_poetry
+
 # python package
 pip install --upgrade pip
 pip install pycaret
@@ -124,11 +132,6 @@ jupyter nbextension enable varInspector/main
 jupyter nbextension enable code_font_size/code_font_size
 jupyter nbextension enable highlighter/highlighter
 jupyter nbextension enable table_beautifier/main
-
-# poetry
-poetry config virtualenvs.in-project true
-mkdir -p ~/.zfunc
-poetry completions zsh > ~/.zfunc/_poetry
 
 # nodenv
 nodenv install 13.14.0
