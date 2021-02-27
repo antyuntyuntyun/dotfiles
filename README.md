@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-dotfileのみならずその他諸々含めた開発環境設定のためのレポジトリ.  
+dotfileのみならずその他諸々含めたマルチOS開発環境設定のためのレポジトリ.  
 設定スクリプトによる一括設定が可能.  
 :warning: 利用に際しては, 以下の章を一読の上利用すること.  :warning:
 
