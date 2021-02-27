@@ -1,0 +1,17 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# ------------------------------------
+# colorscheme tender setting
+# ------------------------------------
+[[plugins]]
+
+repo = 'jacoborus/tender.vim'
+#repo = 'nanotech/jellybeans.vim'
+hook_add = '''
+    colorscheme tender
+    set background=dark
+    syntax on
+    set t_Co=256
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+'''

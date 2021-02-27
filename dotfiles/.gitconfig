@@ -1,0 +1,64 @@
+[core]
+        excludesfile = ~/.gitignore_global
+        quotepath = false
+        pager = less -r
+        editor = vim
+[color]
+        ui = auto
+[init]
+        defaultBranch = main
+[push]
+        default = current
+[merge]
+        ff = false
+[pull]
+        rebase = preserve
+[alias]
+        l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
+        ll = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+        lg = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn%Cred%d %Creset%s'
+        lm = log --merges --pretty=format:'%C(yellow)%h %Cgreen%ci %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
+        b = branch
+        ba = branch -a
+        bd = branch --delete
+        bfd = branch -D
+        co = checkout
+        com = checkout master
+	cod = checkout develop
+        cob = checkout -b
+        a = add
+        aa = !git add -A && git s
+        c = commit
+        cm = commit -m
+        cam = commit -a -m
+        wip = commit -m 'WIP'
+        amend = commit --amend -C HEAD
+        d = diff
+        dc = diff --cached
+        dn = diff --name-only
+        dw = diff --color-words
+        um = !git --no-pager diff --name-only --diff-filter=U
+        ft = fetch
+        ftp = fetch --prune
+        pl = pull
+        ps = push
+        info = remote show origin
+        s = status --short --branch
+        st = status
+        r = reset
+        rs = reset --soft
+        rsh = reset --soft HEAD
+        rh = reset --hard
+        rhh = reset --hard HEAD
+        rl = reflog show -n 20
+        rb = rebase
+        rbi = rebase -i
+        rbh = rebase HEAD
+        rbo = rebase --onto
+        sync = !git checkout master && git pull origin master && git fetch -p origin && git branch -d $(git branch --merged | grep -v master | grep -v '*')
+        ignore = "!f() { echo $1 >> \"${GIT_PREFIX}.gitignore\"; }; f"
+        alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+[http]
+	sslVerify = true
+[ghq]
+	root = ~/src
